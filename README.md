@@ -137,7 +137,7 @@ python scripts/compute_slice_metrics_batch.py ^
   --bmd-high 0.75
 ```
 
-### 3. Batch processing (all samples_
+### 3. Batch processing (all samples)
 
 ```bash
 python scripts/compute_slice_metrics_batch.py ^
