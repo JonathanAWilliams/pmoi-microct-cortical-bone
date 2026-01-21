@@ -12,32 +12,38 @@ cases demonstrating when and why these measures diverge.
 ## Repository structure
 
 ```text
-scripts/
-  compute_slice_metrics_batch.py      # Main pMOA / pMOI computation
-  compute_slice_metrics_single.py     # (optional) simpler entry point
-
-synthetic/
-  generate_synthetic_cylinders.py     # Synthetic test cases (uniform, ring, wedge, sandwich)
-  README.md                           # Explains synthetic assumptions and hypotheses
-
-figures/
-  plot_slice_profiles.py              # Reproduce manuscript figures
-  plot_centroid_shift.py
-
-stats/
-  compare_groups.py                   # Statistical analysis of pMOA vs pMOI
-
-utils/
-  calibration.py
-  geometry.py
-
-examples/
-  synthetic_slices/                   # Small example dataset for testing
-
-docs/
-  theory.md                           # Optional: derivations & conceptual notes
+.
+├─ compute_slice_metrics_batch.py
+├─ plot_slice_profiles_and_summary.py
+├─ synthetic_shapes.py
+├─ visualise_pmoa_i_contributions_two_samples.py
+├─ validation/
+│  ├─ README.md
+│  ├─ validate_slicegeometry_vs_python.py
+│  ├─ generate_slicegeometry_validation_cases.py
+└─ README.md
 ```
 
+Core computation:
+- `compute_slice_metrics_batch.py`
+- `slice_metrics_full_<Sample>.csv`
+  Batch slice-wise computation of Ct.Ar, TMD, geometric pMOA, and density-weighted pMOI from 2D cortical microCT slices.
+
+Synthetic validation data:
+- `synthetic_shapes.py`  
+  Generates the synthetic test cases used in the manuscript.
+
+Plotting / figure reproduction:
+- `plot_slice_profiles_and_summary.py`  
+  Generates slice-wise (normalised bone length) profiles and summary plots/statistics from the exported results.
+
+Contribution visualisations:
+- `visualise_pmoa_i_contributions_two_samples.py`  
+  Produces per-pixel pMOA and pMOI contribution heatmaps for two samples with shared colour scales (transparent background for 3D Slicer overlays).
+
+Validation against BoneJ Slice Geometry:
+- `validation/`  
+  Scripts + minimal test images used to compare Python outputs to BoneJ Slice Geometry.
 
 
 ## Core computation: `compute_slice_metrics_batch.py`
