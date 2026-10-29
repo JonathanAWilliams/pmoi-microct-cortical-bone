@@ -1,7 +1,7 @@
 # Density-weighted polar moment analysis (pMOI vs pMOA)
 
 This repository contains the reference Python implementation used in the manuscript:
-**“Title of paper”**.
+A Tissue Mineral Density-Weighted Polar Moment for microCT Cortical Bone Analysis
 
 The code implements slice-wise geometric (pMOA) and density-weighted (pMOI) polar moment
 calculations from microCT cortical cross-sections, together with synthetic validation
